@@ -8,8 +8,8 @@ if number < 0:
 else:
     number %= 10
 if not number:
-    print("{0} and is {0}".format(number))
+    print(str(number) + " and is 0")
 elif number > 5:
-    print("{:=d} and is greater than 5".format(number))
+    print(str(number) + " and is greater than 5")
 elif number < 6:
-    print("{:=-d} and is less than 6 and not 0".format(number))
+    print(str(number) + " and is less than 6 and not 0")
