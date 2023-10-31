@@ -7,7 +7,7 @@ if number < 0:
     number = number % 10 - 10
 else:
     number %= 10
-if not number:
+if number == 0:
     print(str(number) + " and is 0")
 elif number > 5:
     print(str(number) + " and is greater than 5")
