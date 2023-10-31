@@ -2,7 +2,7 @@
 
 def islower(c):
     if not c:
-        print("Traceback (most recent call last): you have type anything")
+        print("Traceback (most recent call last):")
         return False
     elif (c >= 'a' and c <= 'z'):
         return True
