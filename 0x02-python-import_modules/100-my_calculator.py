@@ -2,7 +2,7 @@
 import calculator_1 as cal
 import sys
 
-if __name__ != "calculator_1":
+if __name__ == "__main__":
     argc = len(sys.argv)
     if argc != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
