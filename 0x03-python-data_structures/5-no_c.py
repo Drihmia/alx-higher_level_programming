@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 def no_c(my_string):
     for (i, ch) in enumerate(my_string):
         if ch in "cC":
