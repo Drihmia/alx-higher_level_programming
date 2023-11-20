@@ -1,17 +1,13 @@
 #!/usr/bin/python3
 def safe_print_list(my_list=[], x=0):
-    try:
-        if x < 0:
-            raise IndexError()
-        for i, ele in enumerate(my_list):
-            print("{}".format(ele), end = "")
-            if (i + 1 == x):
-                break
+    if x < 0:
         print()
-        return i + 1
-    except IndexError as e:
-        print(e)
         return 0
-    except Exception as e:
-        print(e)
-        return 0
+    for i in range(x):
+        try:
+            print("{}".format(my_list[i]), end="")
+        except IndexError as e:
+            print()
+            return i
+    print()
+    return x
