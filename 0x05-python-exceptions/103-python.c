@@ -24,7 +24,7 @@ void print_python_list(PyObject *p)
 			printf("Element %zd: %s\n", i, ((PyTypeObject *)(item->ob_type))->tp_name);
 			if (PyBytes_Check(item))
 				print_python_bytes(item);
-			else if (!PyFloat_CheckExact(item))
+			else if (PyFloat_CheckExact(item))
 				print_python_float(item);
 		}
 	}
