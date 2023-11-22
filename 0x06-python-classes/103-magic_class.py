@@ -10,7 +10,6 @@ class MagicClass:
     Attributes:
         radius: integer or float : or radias of a circle.
     """
-    radius = 0
 
     def __init__(self):
         """Initialize the MagicClass instance.
