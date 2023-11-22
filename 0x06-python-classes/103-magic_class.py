@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Redouane is King! o_O"""
 import math
 
 """class magic for byte code"""
