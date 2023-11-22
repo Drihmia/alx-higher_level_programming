@@ -16,6 +16,7 @@ class Square:
             ValueError: If the given size is negative.
             TypeError: If the given size is not an integer.
         """
+
         if isinstance(size, int):
             if size >= 0:
                 self.__size = size
