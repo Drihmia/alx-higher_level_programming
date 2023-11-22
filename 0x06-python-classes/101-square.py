@@ -121,7 +121,7 @@ class Square:
 
         strr = ""
         if self.size == 0:
-            strr = "\n"
+            strr = ""
             return strr
         for i in range(self.position[1]):
             strr = "\n" * self.position[1]
