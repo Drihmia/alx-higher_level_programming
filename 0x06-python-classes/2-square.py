@@ -15,7 +15,6 @@ class Square:
         Raises:
             ValueError: If the given size is negative.
             TypeError: If the given size is not an integer.
-
         """
         if isinstance(size, int):
             if size >= 0:
