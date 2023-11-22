@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import math
 
 """class magic for byte code"""
 
@@ -19,7 +20,6 @@ class MagicClass:
         """
 
         self.__radius = 0
-
         if type(radius) is not int and type(radius) is not float:
             raise TypeError('radius must be a number')
         self.__radius = radius
@@ -30,6 +30,7 @@ class MagicClass:
         Returns:
             float : the current circl area.
         """
+
         return self.__radius ** 2 * math.pi
 
     def circumference(self):
@@ -38,4 +39,5 @@ class MagicClass:
         Returns:
             float : the current circl circumference.
         """
+
         return 2 * math.pi * self.__radius
