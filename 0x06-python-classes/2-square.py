@@ -6,9 +6,12 @@
 class Square:
     """Empty class Square that defines a square."""
 
-    def __init__(self, size):
+    def __init__(self, size=0):
         """Initialize the Square instance.
 
+        Args:
+            size (int): The size of the square. Must be a non-negative integer.
+        
         Raises:
             ValueError: If the given size is negative.
             TypeError: If the given size is not an integer.
