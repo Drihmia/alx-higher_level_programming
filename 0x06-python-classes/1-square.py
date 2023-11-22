@@ -1,11 +1,16 @@
 #!/usr/bin/python3
 
-class Square:
-    """
-    A class Square that defines a square.
+"""Documentation for Square class """
 
-    Args:
-        size : The first field.
-    """
+
+class Square:
+    """Empty class Square that defines a square."""
+
     def __init__(self, size):
+        """Initialize the Square instance.
+
+        Args:
+            size (int): The size of the square.
+
+        """
         self.__size = size
