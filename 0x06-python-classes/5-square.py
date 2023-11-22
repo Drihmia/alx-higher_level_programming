@@ -4,12 +4,14 @@ class Square:
     """
     A class Square that defines a square.
 
-    Args:
-        size (int) : The first field.
 
     the size nust be an integer and greater or equal to 0.
     """
     def __init__(self, size=0):
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
         self.__size = size
 
     @property
