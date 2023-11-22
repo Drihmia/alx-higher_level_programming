@@ -9,7 +9,7 @@ class Square:
     def __init__(self, size):
         """Initialize the Square instance.
 
-         Args:
+        Args:
             size (int): The size of the square. Must be a non-negative integer.
 
         Raises:
