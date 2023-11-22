@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-
 """Documentation for Square class """
 
 
@@ -22,7 +21,7 @@ class Square:
 
     @property
     def size(self):
-          """Get or set the size of the square.
+        """Get or set the size of the square.
 
         Returns:
             int: The current size of the square.
@@ -51,19 +50,18 @@ class Square:
         self.__size = value
 
     def area(self):
-        """
-        Compute the area of a given square.
+        """Compute the area of a given square.
 
         Returns:
-            int : the current square area.
+            int : The return value. current square area.
         """
         return self.__size * self.__size
 
     def my_print(self):
-        """
-        Prints in stdout the square with the character #.
+        """Prints in stdout the square with the character #.
 
         If size is equal to 0, print an empty line.
+
         """
         for i in range(self.size):
             if i != 0:
