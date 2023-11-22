@@ -4,24 +4,12 @@
 
 
 class MagicClass:
-
-    """Class magic class for byte code.
-
-    Attributes:
-        radius: integer or float : or radias of a circle.
-    """
     radius = 0
 
     def __init__(self):
-        """Initialize the MagicClass instance.
-
-        Raises:
-            TypeError: if the given radius is not a float or and int.
-
-        """
-
         self._MagicClass__radius = 0
-        if type(radius) is not int or type(radius) is not float:
+
+        if type(radius) is not int and type(radius) is not float:
             raise TypeError('radius must be a number')
         else:
             self._MagicClass__radius = radius
