@@ -56,7 +56,7 @@ class Square:
             int : The return value. current square area.
         """
         return self.__size * self.__size
-
+    
     def __le__(self, other):
         """Less than comparison.
 
@@ -66,4 +66,35 @@ class Square:
         Returns:
             bool: True if self is less than other, False otherwise.
         """
+        if not isinstance(other, Square):
+            return NotImplemented
+
         return self.__size <= other.__size
+
+    def __gt__(self, other):
+        """Less than comparison.
+
+        Args:
+            other (Square): Another instance of Square.
+
+        Returns:
+            bool: True if self is less than other, False otherwise.
+        """
+        if not isinstance(other, Square):
+            return NotImplemented
+
+        return self.__size >= other.__size
+
+    def ____(self, other):
+        """Less than comparison.
+
+        Args:
+            other (Square): Another instance of Square.
+
+        Returns:
+            bool: True if self is less than other, False otherwise.
+        """
+        if not isinstance(other, Square):
+            return NotImplemented
+
+        return self.__size >= other.__size
