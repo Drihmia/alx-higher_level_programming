@@ -5,14 +5,13 @@
 
 class MagicClass:
 
-    """Class magic class for byte code.
-
-    Attributes:
-        radius: integer or float : or radias of a circle.
-    """
+    """Class magic class for byte code."""
 
     def __init__(self, radius=0):
         """Initialize the MagicClass instance.
+
+        Args:
+            radius: integer or float : or radias of a circle.
 
         Raises:
             TypeError: if the given radius is not a float or and int.
@@ -31,7 +30,6 @@ class MagicClass:
         Returns:
             float : the current circl area.
         """
-
         return self.__radius ** 2 * math.pi
 
     def circumference(self):
@@ -40,5 +38,4 @@ class MagicClass:
         Returns:
             float : the current circl circumference.
         """
-
         return 2 * math.pi * self.__radius
