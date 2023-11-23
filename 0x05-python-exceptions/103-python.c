@@ -8,6 +8,11 @@ void print_python_float(PyObject *p);
  */
 void print_python_list(PyObject *p)
 {
+	if (!PyList_Check(p))
+	{
+		fprintf(stderr, "[ERROR] Invalid List Object\n");
+		return;
+	}
 	PyListObject *cast = (PyListObject *)p;
 	Py_ssize_t listSize = ((PyVarObject *)p)->ob_size;
 
