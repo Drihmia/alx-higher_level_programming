@@ -8,15 +8,15 @@ void print_python_float(PyObject *p);
  */
 void print_python_list(PyObject *p)
 {
+	printf("[*] Python list info\n");
 	if (!p || !PyList_Check(p))
 	{
-		fprintf(stderr, "[ERROR] Invalid List Object\n");
+		fprintf(stderr, "  [ERROR] Invalid List Object\n");
 		return;
 	}
 	PyListObject *cast = (PyListObject *)p;
 	Py_ssize_t listSize = ((PyVarObject *)p)->ob_size;
 
-	printf("[*] Python list info\n");
 	printf("[*] Size of the Python List = %zd\n", cast->ob_base.ob_size);
 	printf("[*] Allocated = %zd\n", cast->allocated);
 
@@ -29,7 +29,7 @@ void print_python_list(PyObject *p)
 			printf("Element %zd: %s\n", i, ((PyTypeObject *)(item->ob_type))->tp_name);
 			if (PyBytes_Check(item))
 				print_python_bytes(item);
-			else if (PyFloat_CheckExact(item))
+			else if (PyFloat_Check(item))
 				print_python_float(item);
 		}
 	}
@@ -79,7 +79,7 @@ void print_python_float(PyObject *p)
 	double value;
 
 	printf("[.] float object info\n");
-	if (p && PyFloat_Check(p))
+	if (p && PyFloat_CheckExact(p))
 	{
 		value = ((PyFloatObject *)p)->ob_fval;
 
