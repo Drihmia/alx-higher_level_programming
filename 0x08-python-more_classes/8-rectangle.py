@@ -259,12 +259,13 @@ class Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
+        print(rect_1.area(), rect_2.area())
         if rect_1.area() > rect_2.area():
-            return (repr(rect_1))
+            return rect_1
         elif rect_1.area() < rect_2.area():
-            return (repr(rect_2))
+            return rect_2
         else:
-            return (repr(rect_1))
+            return rect_1
 
 
 if __name__ == "__main__":
