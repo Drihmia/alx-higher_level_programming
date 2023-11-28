@@ -7,6 +7,7 @@ A class with no class or object attribute, that prevents the user from
 
 
 class LockedClass:
-    """Preventing the user from dinamically creating a new instance attribute"""
-    
+    """Preventing the user from dinamically creating a
+        new instance attribute"""
+
     __slots__ = ('first_name',)
