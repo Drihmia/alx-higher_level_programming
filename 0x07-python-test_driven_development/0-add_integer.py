@@ -30,12 +30,8 @@ def add_integer(a, b=98):
     >>> add_integer([2, 3], 3)
     Traceback (most recent call last):
     TypeError: a must be an integer
-
+NaN
     """
-    if a != a:
-        return int(b)
-    if b != b:
-        return int(a)
     if a is None or type(a) not in [int, float]:
         raise TypeError("a must be an integer")
     if b is None or type(b) not in [int, float]:
