@@ -22,7 +22,7 @@ this module contains one funtion that divides all elements of a matrix.
 """
 
 
-def matrix_divided(matrix=[[1]], div=1):
+def matrix_divided(matrix=[[0.0]], div=1):
     """Return a new matrix
 
     Matrix must be a list of lists of integers or floats.
@@ -98,12 +98,14 @@ def matrix_divided(matrix=[[1]], div=1):
     >>> matrix_divided(matrix, 3)
     [[1.0]]
     >>> matrix_divided(matrix, float('inf'))
-    [[0]]
+    [[0.0]]
+    >>> matrix_divided()
+    0
     """
 
     # checking the parameter div.
     if div == float('inf') or div == -float('inf') or div != div:
-        return [[0 for item in row] for row in matrix]
+        return [[0.0 for item in row] for row in matrix]
 
     if type(div) not in [int, float]:
         raise TypeError("div must be a number")
