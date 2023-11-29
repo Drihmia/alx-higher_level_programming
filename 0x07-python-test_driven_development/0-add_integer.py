@@ -35,7 +35,7 @@ def add_integer(a, b=98):
     if a != a:
         raise TypeError("a must be an integer")
     if b != b:
-        b = 89
+        raise TypeError("b must be an integer")
     if a is None or type(a) not in [int, float]:
         raise TypeError("a must be an integer")
     if b is None or type(b) not in [int, float]:
