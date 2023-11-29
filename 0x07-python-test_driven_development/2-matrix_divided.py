@@ -22,7 +22,7 @@ this module contains one funtion that divides all elements of a matrix.
 """
 
 
-def matrix_divided(matrix, div):
+def matrix_divided(matrix=[[1]], div=1):
     """Return a new matrix
 
     Matrix must be a list of lists of integers or floats.
@@ -94,19 +94,25 @@ def matrix_divided(matrix, div):
     >>> matrix_divided(matrix, 2)
     Traceback (most recent call last):
     TypeError: matrix must be a matrix (list of lists) of integers/floats
-
+    >>> matrix = [[3]]
+    >>> matrix_divided(matrix, 3)
+    [[1.0]]
+    >>> matrix_divided(matrix, float('inf'))
+    [[0]]
     """
 
     # checking the parameter div.
+    if div == float('inf') or div == -float('inf') or div != div:
+        return [[0 for item in row] for row in matrix]
+
     if type(div) not in [int, float]:
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
     # checking the matrix.
-    list_length = 0
     b = -9
-    if type(matrix) is not list:
+    if type(matrix) is not list or len(matrix) == 0:
         raise TypeError("matrix must be a matrix (list of lists) "
                         "of integers/floats")
     # looping through the outer list of matrix.
@@ -115,6 +121,10 @@ def matrix_divided(matrix, div):
             raise TypeError("matrix must be a matrix (list of lists) "
                             "of integers/floats")
         a = len(row)
+        if a == 0:
+            raise TypeError("matrix must be a matrix (list of lists) "
+                            "of integers/floats")
+
         if b >= 0 and a != b:
             raise TypeError("Each row of the matrix must have the same size")
         b = len(row)
@@ -122,12 +132,6 @@ def matrix_divided(matrix, div):
             if type(ele) not in [int, float]:
                 raise TypeError("matrix must be a matrix (list of lists) "
                                 "of integers/floats")
-        list_length += 1
-
-    # checking matrix is a matrix (2 or more than 2 list) or a simple list.
-    if list_length < 2:
-        raise TypeError("matrix must be a matrix (list of lists) "
-                        "of integers/floats")
 
     # creating new matrix, the result of dividing the original matrix by div.
     new_matrix = []
