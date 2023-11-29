@@ -1,42 +1,41 @@
 ```
->>> matrix_mul = __import__('100-matrix_mul').matrix_mul
-
->>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+>>> lazy_matrix_mul = __import__('1101-lazy_matrix_mul').lazy_matrix_mul
+>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
 [[7, 10], [15, 22]]
 
->>> print(matrix_mul([[1, 2], [3, 4]], [[1, 'A'], [3, 4]]))
+>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 'A'], [3, 4]]))
 Traceback (most recent call last):
 TypeError: m_b should contain only integers or floats
 
->>> print(matrix_mul([[1, 'b'], [3, 4]], [[1, 2], [3, 4]]))
+>>> print(lazy_matrix_mul([[1, 'b'], [3, 4]], [[1, 2], [3, 4]]))
 Traceback (most recent call last):
 TypeError: m_a should contain only integers or floats
 
->>> print(matrix_mul([[1, 4], []], [[1, 2], [3, 4]]))
+>>> print(lazy_matrix_mul([[1, 4], []], [[1, 2], [3, 4]]))
 Traceback (most recent call last):
 ValueError: m_a can't be empty
 
->>> print(matrix_mul([[1, 2], []], [[1, 2], [3, 4]]))
+>>> print(lazy_matrix_mul([[1, 2], []], [[1, 2], [3, 4]]))
 Traceback (most recent call last):
 ValueError: m_a can't be empty
 
->>> print(matrix_mul([[], []], [[], []]))
+>>> print(lazy_matrix_mul([[], []], [[], []]))
 Traceback (most recent call last):
 ValueError: m_a can't be empty
 
->>> print(matrix_mul([[], []], [[], [1, 2]]))
+>>> print(lazy_matrix_mul([[], []], [[], [1, 2]]))
 Traceback (most recent call last):
 ValueError: m_a can't be empty
 
->>> print(matrix_mul([[], []], [[3, 4], [1, 2]]))
+>>> print(lazy_matrix_mul([[], []], [[3, 4], [1, 2]]))
 Traceback (most recent call last):
 ValueError: m_a can't be empty
 
->>> print(matrix_mul([[2], [3, 4]], [[3, 4], [1, 2]]))
+>>> print(lazy_matrix_mul([[2], [3, 4]], [[3, 4], [1, 2]]))
 Traceback (most recent call last):
 TypeError: each row of m_a must be of the same size
 
->>> print(matrix_mul([[2], [3]], [[3, 4], [1, 2]]))
+>>> print(lazy_matrix_mul([[2], [3]], [[3, 4], [1, 2]]))
 Traceback (most recent call last):
 ValueError: m_a and m_b can't be multiplied
 
