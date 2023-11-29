@@ -57,7 +57,7 @@ def lazy_matrix_mul(m_a, m_b):
         list_length += 1
 
     # checking matrix is a matrix (2 or more than 2 list) or a simple list.
-    if list_length < 2:
+    if list_length < 1:
         raise ValueError("m_a can't be empty")
 
     #################################################################
@@ -82,12 +82,10 @@ def lazy_matrix_mul(m_a, m_b):
         list_length += 1
 
     # checking matrix is a matrix (2 or more than 2 list) or a simple list.
-    if list_length < 2:
+    if list_length < 1:
         raise ValueError("m_b can't be empty")
 
     # check if m_a and m_b can't be multiplied
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
-    
-
     return dot(m_a, m_b)

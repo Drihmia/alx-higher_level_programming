@@ -48,4 +48,5 @@ def add_integer(a, b=98):
 
 if __name__ == "__main__":
     import doctest
-    doctest.testmod(optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSis)
+    flags = doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
+    doctest.testmod(optionflags=flags)
