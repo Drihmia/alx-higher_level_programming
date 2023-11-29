@@ -46,11 +46,7 @@ def add_integer(a, b=98):
     if b == float('inf') or b == float('-inf'):
         return 98
 
-    if type(a) is float:
-        a = int(a)
-    if type(b) is float:
-        b = int(b)
-    result = a + b
+    result = int(a) + int(b)
     if result == float('inf') or result == float('-inf'):
         return 98
     return result
