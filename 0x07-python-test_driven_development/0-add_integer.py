@@ -41,13 +41,13 @@ def add_integer(a, b=98):
     if b is None or type(b) not in [int, float]:
         raise TypeError("b must be an integer")
 
-    if a == float('inf') or a == float('-inf'):
+    if a == float('inf') or a == -float('inf'):
         return 98
-    if b == float('inf') or b == float('-inf'):
+    if b == float('inf') or b == -float('inf'):
         return 98
 
     result = int(a) + int(b)
-    if result == float('inf') or result == float('-inf'):
+    if result == float('inf') or result == -float('inf'):
         return 98
     return result
 
