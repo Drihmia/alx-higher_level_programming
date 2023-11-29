@@ -1,0 +1,31 @@
+This is ``test`` module
+=======================
+
+Using `àdd_integer`
+______________________
+
+>>> M_imported = __import__("0-add_integer")
+>>> M_imported.add_integer(1, 2)
+3
+>>> M_imported.add_integer(100, -2)
+98
+>>> M_imported.add_integer(4, "School")
+Traceback (most recent call last):
+TypeError: b must be an integer
+>>> M_imported.add_integer("Red", 3)
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> M_imported.add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> M_imported.add_integer([2, 3], 3)
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> M_imported.add_integer((2, 3), 3)
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> M_imported.add_integer(4, [])
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+"""

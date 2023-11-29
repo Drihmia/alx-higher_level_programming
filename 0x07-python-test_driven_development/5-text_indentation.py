@@ -18,7 +18,8 @@ salamu alikum folks
 
 
 def text_indentation(text):
-    """Return None,
+    """Return None, rints a text with 2 new lines after each
+        of these characters: ., ? and :
 
     >>> text_indentation("Red. Dri? nice: to meet, you;haha.")
     Red
@@ -31,11 +32,21 @@ def text_indentation(text):
     <BLANKLINE>
     >>> text_indentation("salamu alikum folks")
     salamu alikum folks
+    >>> text_indentation(22)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+    >>> text_indentation(("red", "dd"))
+    Traceback (most recent call last):
+    TypeError: text must be a string
+    >>> text_indentation(["red", "dd"])
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
     """
 
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    # print(text, end="")
+
     lst = [".", "?", ":"]
 
     for dlm in lst:
