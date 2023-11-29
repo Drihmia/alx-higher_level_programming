@@ -100,7 +100,7 @@ def matrix_divided(matrix=[[0.0]], div=1):
     >>> matrix_divided(matrix, float('inf'))
     [[0.0]]
     >>> matrix_divided()
-    0
+    [[0.0]]
     """
 
     # checking the parameter div.
