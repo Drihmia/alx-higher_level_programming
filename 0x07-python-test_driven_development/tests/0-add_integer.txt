@@ -9,6 +9,12 @@ ______________________
 3
 >>> M_imported.add_integer(100, -2)
 98
+>>> M_imported.add_integer(2, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+>>> M_imported.add_integer(None, 2)
+Traceback (most recent call last):
+TypeError: a must be an integer
 >>> M_imported.add_integer(4, "School")
 Traceback (most recent call last):
 TypeError: b must be an integer
