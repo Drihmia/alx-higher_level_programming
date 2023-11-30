@@ -22,7 +22,6 @@ def print_square(size):
     ####
     ####
     >>> print_square(0)
-
     >>> print_square(1)
     #
     >>> print_square(-1)
@@ -45,10 +44,7 @@ def print_square(size):
         raise TypeError("size must be an integer")
     if size < 0:
         raise ValueError("size must be >= 0")
-    if size == 0:
-        print("")
-    else:
-        print(("#" * int(size) + "\n") * int(size), end="")
+    print(("#" * int(size) + "\n") * int(size), end="")
 
 
 if __name__ == "__main__":
