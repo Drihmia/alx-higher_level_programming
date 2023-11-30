@@ -9,7 +9,7 @@ My name is John Smith
 """
 
 
-def say_my_name(first_name="", last_name=""):
+def say_my_name(first_name, last_name=""):
     """Return None, print a string to stdout:
         My name is <first name> <last name>
 
@@ -37,6 +37,10 @@ def say_my_name(first_name="", last_name=""):
     >>> say_my_name("Redouane", None)
     Traceback (most recent call last):
     TypeError: last_name must be a string
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1\
+            required positional argument: 'first_name'
     """
 
     if type(first_name) is not str:
