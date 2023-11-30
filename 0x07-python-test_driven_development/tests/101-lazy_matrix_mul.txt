@@ -1,42 +1,51 @@
 ```
 >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+
 >>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
-[[7, 10], [15, 22]]
+[[ 7 10]
+ [15 22]]
+
+>>> print(lazy_matrix_mul("Redouane", [[1, 2], [3, 4]]))
+[[ 7 10]
+ [15 22]]
+>>> print(lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
+[[13 16]]
 
 >>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 'A'], [3, 4]]))
 Traceback (most recent call last):
-TypeError: m_b should contain only integers or floats
+ValueError: data type must provide an itemsize
 
 >>> print(lazy_matrix_mul([[1, 'b'], [3, 4]], [[1, 2], [3, 4]]))
 Traceback (most recent call last):
-TypeError: m_a should contain only integers or floats
+ValueError: data type must provide an itemsize
 
 >>> print(lazy_matrix_mul([[1, 4], []], [[1, 2], [3, 4]]))
 Traceback (most recent call last):
-ValueError: m_a can't be empty
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
 
 >>> print(lazy_matrix_mul([[1, 2], []], [[1, 2], [3, 4]]))
 Traceback (most recent call last):
-ValueError: m_a can't be empty
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part. 
 
 >>> print(lazy_matrix_mul([[], []], [[], []]))
 Traceback (most recent call last):
-ValueError: m_a can't be empty
+ValueError: 
 
 >>> print(lazy_matrix_mul([[], []], [[], [1, 2]]))
 Traceback (most recent call last):
-ValueError: m_a can't be empty
+ValueError: 
 
 >>> print(lazy_matrix_mul([[], []], [[3, 4], [1, 2]]))
 Traceback (most recent call last):
-ValueError: m_a can't be empty
+ValueError: 
 
 >>> print(lazy_matrix_mul([[2], [3, 4]], [[3, 4], [1, 2]]))
 Traceback (most recent call last):
-TypeError: each row of m_a must be of the same size
+TypeError: 
 
 >>> print(lazy_matrix_mul([[2], [3]], [[3, 4], [1, 2]]))
 Traceback (most recent call last):
-ValueError: m_a and m_b can't be multiplied
+ValueError: 
 
 ```
