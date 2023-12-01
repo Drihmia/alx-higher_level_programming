@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-from numpy import matmul
-
 """
 this module contains one funtion that multiplies 2 matrices by
 using the module NumPy
 
+>>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[7, 8], [9, 10], [11, 12]])
+array([[ 58,  64],
+       [139, 154]])
 """
+from numpy import matmul
 
 
 def lazy_matrix_mul(m_a, m_b):
