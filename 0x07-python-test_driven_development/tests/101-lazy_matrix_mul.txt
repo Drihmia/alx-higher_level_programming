@@ -7,45 +7,55 @@
  [15 22]]
 
 >>> print(lazy_matrix_mul("Redouane", [[1, 2], [3, 4]]))
-[[ 7 10]
- [15 22]]
+Traceback (most recent call last):
+ValueError: Scalar operands are not allowed, use '*' instead
+
 >>> print(lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
 [[13 16]]
 
 >>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 'A'], [3, 4]]))
 Traceback (most recent call last):
-ValueError: data type must provide an itemsize
+TypeError: invalid data type for einsum
 
 >>> print(lazy_matrix_mul([[1, 'b'], [3, 4]], [[1, 2], [3, 4]]))
 Traceback (most recent call last):
-ValueError: data type must provide an itemsize
+TypeError: invalid data type for einsum
 
 >>> print(lazy_matrix_mul([[1, 4], []], [[1, 2], [3, 4]]))
 Traceback (most recent call last):
-ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
+ValueError: setting an array element with a sequence.
 
 >>> print(lazy_matrix_mul([[1, 2], []], [[1, 2], [3, 4]]))
 Traceback (most recent call last):
-ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part. 
+ValueError: setting an array element with a sequence.
 
 >>> print(lazy_matrix_mul([[], []], [[], []]))
 Traceback (most recent call last):
-ValueError: 
+ValueError: shapes (2,0) and (2,0) not aligned: 0 (dim 1) != 2 (dim 0)
 
 >>> print(lazy_matrix_mul([[], []], [[], [1, 2]]))
 Traceback (most recent call last):
-ValueError: 
+ValueError: setting an array element with a sequence.
 
 >>> print(lazy_matrix_mul([[], []], [[3, 4], [1, 2]]))
 Traceback (most recent call last):
-ValueError: 
+ValueError: shapes (2,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)
 
 >>> print(lazy_matrix_mul([[2], [3, 4]], [[3, 4], [1, 2]]))
 Traceback (most recent call last):
-TypeError: 
-
+ValueError: setting an array element with a sequence.
 >>> print(lazy_matrix_mul([[2], [3]], [[3, 4], [1, 2]]))
 Traceback (most recent call last):
-ValueError: 
+ValueError: shapes (2,1) and (2,2) not aligned: 1 (dim 1) != 2 (dim 0)
+
+>>> print(lazy_matrix_mul([[]], [[]]))
+Traceback (most recent call last):
+ValueError: shapes (1,0) and (1,0) not aligned: 0 (dim 1) != 1 (dim 0)
+>>> print(lazy_matrix_mul([[]]))
+Traceback (most recent call last):
+ValueError: shapes (1,0) and (1,0) not aligned: 0 (dim 1) != 1 (dim 0)
+>>> print(lazy_matrix_mul())
+Traceback (most recent call last):
+ValueError: shapes (1,0) and (1,0) not aligned: 0 (dim 1) != 1 (dim 0)
 
 ```

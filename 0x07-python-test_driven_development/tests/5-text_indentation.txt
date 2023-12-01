@@ -6,13 +6,13 @@ ______________________
 
 >>> M_imported = __import__("5-text_indentation")
 >>> M_imported.text_indentation("Red. Dri? nice: to meet, you;haha.")
-Red
+Red.
 <BLANKLINE>
-Dri
+Dri?
 <BLANKLINE>
-nice
+nice:
 <BLANKLINE>
-to meet, you;haha
+to meet, you;haha.
 <BLANKLINE>
 >>> M_imported.text_indentation("salamu alikum folks")
 salamu alikum folks

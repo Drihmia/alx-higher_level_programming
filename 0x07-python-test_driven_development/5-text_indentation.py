@@ -4,13 +4,13 @@ This module contain one funtion that prints a text with 2 new lines
     after each of these characters: ., ? and :
 
 >>> text_indentation("Red. Dri? nice: to meet, you;haha.")
-Red
+Red.
 <BLANKLINE>
-Dri
+Dri?
 <BLANKLINE>
-nice
+nice:
 <BLANKLINE>
-to meet, you;haha
+to meet, you;haha.
 <BLANKLINE>
 >>> text_indentation("salamu alikum folks")
 salamu alikum folks
@@ -22,13 +22,13 @@ def text_indentation(text):
         of these characters: ., ? and :
 
     >>> text_indentation("Red. Dri? nice: to meet, you;haha.")
-    Red
+    Red.
     <BLANKLINE>
-    Dri
+    Dri?
     <BLANKLINE>
-    nice
+    nice:
     <BLANKLINE>
-    to meet, you;haha
+    to meet, you;haha.
     <BLANKLINE>
     >>> text_indentation("salamu alikum folks")
     salamu alikum folks
