@@ -16,6 +16,8 @@ to meet, you;haha.
 <BLANKLINE>
 >>> M_imported.text_indentation("salamu alikum folks")
 salamu alikum folks
+>>> M_imported.text_indentation()
+
 >>> M_imported.text_indentation(22)
 Traceback (most recent call last):
 TypeError: text must be a string

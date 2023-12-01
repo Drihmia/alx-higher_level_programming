@@ -14,10 +14,12 @@ to meet, you;haha.
 <BLANKLINE>
 >>> text_indentation("salamu alikum folks")
 salamu alikum folks
+>>> text_indentation()
+
 """
 
 
-def text_indentation(text):
+def text_indentation(text=""):
     """Return None, rints a text with 2 new lines after each
         of these characters: ., ? and :
 
