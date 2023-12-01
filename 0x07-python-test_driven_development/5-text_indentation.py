@@ -43,6 +43,8 @@ def text_indentation(text=""):
     >>> text_indentation(["red", "dd"])
     Traceback (most recent call last):
     TypeError: text must be a string
+    >>> text_indentation()
+
 
     """
 
@@ -60,7 +62,6 @@ def text_indentation(text=""):
     text_list[i] = text_list[i][:-2]
     for ele in text_list:
         print(ele.strip(" "), end="")
-    text_list[-1] = text_list[-1].rstrip("\n")
 
 
 if __name__ == "__main__":
