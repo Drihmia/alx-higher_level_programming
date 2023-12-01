@@ -50,7 +50,7 @@ def text_indentation(text):
     lst = [".", "?", ":"]
 
     for dlm in lst:
-        text = text.replace(dlm, "\n")
+        text = text.replace(dlm, dlm + "\n")
 
     text_list = text.split("\n")
     for i in range(len(text_list)):
