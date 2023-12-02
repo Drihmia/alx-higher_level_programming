@@ -15,11 +15,12 @@ to meet, you;haha.
 >>> text_indentation("salamu alikum folks")
 salamu alikum folks
 >>> text_indentation()
-
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
 """
 
 
-def text_indentation(text=""):
+def text_indentation(text):
     """Return None, rints a text with 2 new lines after each
         of these characters: ., ? and :
 
@@ -37,14 +38,15 @@ def text_indentation(text=""):
     >>> text_indentation(22)
     Traceback (most recent call last):
     TypeError: text must be a string
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
     >>> text_indentation(("red", "dd"))
     Traceback (most recent call last):
     TypeError: text must be a string
     >>> text_indentation(["red", "dd"])
     Traceback (most recent call last):
     TypeError: text must be a string
-    >>> text_indentation()
-
 
     """
 
