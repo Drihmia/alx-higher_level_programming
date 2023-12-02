@@ -40,7 +40,8 @@ def text_indentation(text):
     TypeError: text must be a string
     >>> text_indentation()
     Traceback (most recent call last):
-    TypeError: text_indentation() missing 1 required positional argument: 'text'
+    TypeError: text_indentation() missing 1\
+            required positional argument: 'text'
     >>> text_indentation(("red", "dd"))
     Traceback (most recent call last):
     TypeError: text must be a string
