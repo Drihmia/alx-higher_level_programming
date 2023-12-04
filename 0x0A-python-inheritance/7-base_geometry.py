@@ -9,6 +9,11 @@ in this module, you shall find a Class called BaseGeometry
 ... except Exception as e:
 ... 	print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] name must be an integer
+>>> try:
+...	print(bg.area())
+... except Exception as e:
+... 	print("[{}] {}".format(e.__class__.__name__, e))
+[Exception] area() is not implemented
 
 """
 
@@ -54,6 +59,11 @@ class BaseGeometry:
     ... except Exception as e:
     ... 	print("[{}] {}".format(e.__class__.__name__, e))
     [TypeError] name must be an integer
+    >>> try:
+    ...	    print(bg.area())
+    ... except Exception as e:
+    ... 	print("[{}] {}".format(e.__class__.__name__, e))
+    [Exception] area() is not implemented
     """
 
     def area(self):
