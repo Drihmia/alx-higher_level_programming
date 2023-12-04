@@ -9,7 +9,14 @@ class MyList(list):
     """MyList (child class) inherits from list class (parent class)
     >>> MyList = __import__('1-my_list').MyList
     >>> my_list = MyList()
+    >>> my_list.print_sorted()
+    []
     >>> my_list.append(1)
+    >>> my_list.print_sorted()
+    [1]
+    >>> my_list.print_sorted(None)
+    Traceback (most recent call last):
+    TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
     >>> my_list.append(4)
     >>> my_list.append(2)
     >>> my_list.append(3)
