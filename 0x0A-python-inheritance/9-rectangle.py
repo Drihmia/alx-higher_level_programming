@@ -16,7 +16,7 @@ class Rectangle(BaseGeometry):
         Instantiation with width and height
 
         Raises:
-            ValueError: f**m integer_validator;
+            ValueError:  integer_validator;
                 width and height must be positive integers
         """
 
@@ -27,8 +27,8 @@ class Rectangle(BaseGeometry):
 
     def area(self):
         """
-        calculating the are for the rectangle
-            method that has been i**d f**m BaseGeometry
+        calculating the area for the rectangle
+            method that has been BaseGeometry
         """
         return self.__width * self.__height
 
