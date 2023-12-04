@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
 """
 this module contain a classe called Rectangle that inherits
 f**m Base Geometry class
@@ -29,6 +30,8 @@ class Rectangle(BaseGeometry):
         """
         Calculating the area for the rectangle
             method that has been BaseGeometry
+        Calculating the area for the rectangle
+            method that has been BaseGeometry
 
         Return : the area as integer.
 
@@ -37,6 +40,8 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """
+        A string methode that return a frinedla msg
+        A string methode that return a frinedla msg
         A string methode that return a frinedla msg
 
         """
