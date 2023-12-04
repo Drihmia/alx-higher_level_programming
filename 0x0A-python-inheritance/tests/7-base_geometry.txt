@@ -44,3 +44,8 @@ _________________________________________________
 ... except Exception as e:
 ... 	print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] name must be an integer
+>>> try:
+...	print(bg.area(1234))
+... except Exception as e:
+... 	print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] BaseGeometry.area() takes 1 positional argument but 2 were given
