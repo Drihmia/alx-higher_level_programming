@@ -59,3 +59,13 @@ _________________________________________________
 ... except Exception as e:
 ... 	print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] integer_validator() missing 2 required positional arguments: 'name' and 'value'
+>>> try:
+...	bg.integer_validator("name", ("happy", "month"))
+... except Exception as e:
+... 	print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
+>>> try:
+...	bg.integer_validator("name", {"happy", "month"})
+... except Exception as e:
+... 	print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
