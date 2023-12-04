@@ -13,6 +13,16 @@ class Square(Rectangle):
     """
 
     def __init__(self, size):
+        """
+        Instantiation with size
+
+        Args:
+            size : integer
+        Raises:
+            ValueError:  integer_validator;
+                size must be positive integers
+        """
+
         self.integer_validator("size", size)
         self.__size = size
         self.__width = size
