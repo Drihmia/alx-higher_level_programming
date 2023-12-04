@@ -1,3 +1,4 @@
-!*main.c
-!*main.py
-!*main.pyc
+*main.c
+*main.py
+*main.pyc
+__pycache__/
