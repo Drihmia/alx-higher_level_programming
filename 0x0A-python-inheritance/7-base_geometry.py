@@ -16,6 +16,11 @@ in this module, you shall find a Class called BaseGeometry
 class BaseGeometry:
     """A class with one public instance method called area and that raise
     an exception if that method is called
+
+    Raises:
+        -TypeError : value must be an integer
+        -ValueError : value must be greater than 0
+
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("my_int", 12)
     >>> bg.integer_validator("width", 89)
@@ -59,6 +64,7 @@ class BaseGeometry:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
+
 
 if __name__ == "__main__":
     import doctest
