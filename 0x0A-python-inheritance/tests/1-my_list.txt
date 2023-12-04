@@ -4,7 +4,11 @@ _________________________________________
 
 >>> MyList = __import__('1-my_list').MyList
 >>> my_list = MyList()
+>>> print(my_list)
+[]
 >>> my_list.print_sorted()
+[]
+>>> print(my_list)
 []
 >>> my_list.append(1)
 >>> my_list.print_sorted()
@@ -19,3 +23,9 @@ _________________________________________
 [1, 2, 3, 4, 5]
 >>> print(my_list)
 [1, 4, 2, 3, 5]
+>>> my_list.append()
+Traceback (most recent call last):
+TypeError: list.append() takes exactly one argument (0 given)
+>>> my_list.print_sorted("this an extra argument")
+Traceback (most recent call last):
+TypeError: print_sorted() takes 1 positional argument but 2 were given
