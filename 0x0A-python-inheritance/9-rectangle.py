@@ -27,13 +27,14 @@ class Rectangle(BaseGeometry):
 
     def area(self):
         """
-        calculating the area for the rectangle
+        Calculating the area for the rectangle
             method that has been BaseGeometry
         """
         return self.__width * self.__height
 
     def __str__(self):
-        """a string methode that return a frinedla msg
+        """
+        A string methode that return a frinedla msg
 
         """
         return "[Rectange] {:d}/{:d}".format(self.__width, self.__height)
