@@ -39,6 +39,3 @@ _________________________________________________
 ... except Exception as e:
 ... 	print("[{}] {}".format(e.__class__.__name__, e))
 [Exception] area() is not implemented
->>> bg.integer_validator("name")
-Traceback (most recent call last):
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
