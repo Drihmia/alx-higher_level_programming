@@ -33,6 +33,8 @@ class Rectangle(BaseGeometry):
         return self.__width * self.__height
 
     def __str__(self):
-        """a string methode that return a frinedla msg"""
+        """a string methode that return a frinedla msg
+
+        """
         ha = self.__class__.__name__
         return "[{}] {}/{}".format(ha, self.__width, self.__height)
