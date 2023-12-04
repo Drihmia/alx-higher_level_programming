@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-Rectangle = __import__("9-rectangle").Rectangle
-
 """
 this module contain a classe called Square that inherits
 f**m Base Rectangle class
 """
+Rectangle = __import__("9-rectangle").Rectangle
 
 
 class Square(Rectangle):
