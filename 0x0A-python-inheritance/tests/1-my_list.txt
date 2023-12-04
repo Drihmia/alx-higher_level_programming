@@ -6,7 +6,7 @@ _________________________________________
 >>> my_list = MyList()
 >>> print(issubclass(my_list.__class__, list))
 True
->>> print(issubclass(MyList, list))
+>>> print(issubclass(my_list.__class__, list))
 True
 >>> print(type(my_list) == list)
 False
