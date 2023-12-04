@@ -1,0 +1,47 @@
+``` This is a test file for 7-base_geometry.py```
+_________________________________________________
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
+>>> try:
+...	bg.integer_validator("name", "John")
+... except Exception as e:
+... 	print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
+>>> try:
+...     bg.integer_validator("age", 0)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] age must be greater than 0
+>>> try:
+...     bg.integer_validator("distance", -4)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] distance must be greater than 0
+>>> try:
+...     bg.integer_validator("distance", -4.43)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] distance must be an integer
+>>> try:
+...	bg.integer_validator("name", ["John"])
+... except Exception as e:
+... 	print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
+>>> try:
+...	bg.integer_validator("name", None)
+... except Exception as e:
+... 	print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
+>>> try:
+...	bg.integer_validator("name")
+... except Exception as e:
+... 	print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+>>> try:
+...	bg.integer_validator()
+... except Exception as e:
+... 	print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
