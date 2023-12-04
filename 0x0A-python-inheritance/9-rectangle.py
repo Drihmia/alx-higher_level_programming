@@ -26,9 +26,9 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
     def area(self):
-        """calculating the are for the rectangle
-            method that has been imported f**m
-            BaseGeometry
+        """
+        calculating the are for the rectangle
+            method that has been i**d f**m BaseGeometry
         """
         return self.__width * self.__height
 
