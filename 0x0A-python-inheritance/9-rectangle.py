@@ -29,6 +29,9 @@ class Rectangle(BaseGeometry):
         """
         Calculating the area for the rectangle
             method that has been BaseGeometry
+
+        Return : the area as integer.
+
         """
         return self.__width * self.__height
 
@@ -37,4 +40,4 @@ class Rectangle(BaseGeometry):
         A string methode that return a frinedla msg
 
         """
-        return "[Rectange] {:d}/{:d}".format(self.__width, self.__height)
+        return "[Rectange] " + str(self.__width) + "/" + str(self.__height)
