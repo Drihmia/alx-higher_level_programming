@@ -36,5 +36,4 @@ class Rectangle(BaseGeometry):
         """a string methode that return a frinedla msg
 
         """
-        ha = self.__class__.__name__
-        return "[{}] {}/{}".format(ha, self.__width, self.__height)
+        return "[Rectange] {:d}/{:d}".format(self.__width, self.__height)
