@@ -6,6 +6,10 @@ _________________________________________
 >>> my_list = MyList()
 >>> print(issubclass(my_list.__class__, list))
 True
+>>> print(issubclass(my_list.__class__, list))
+True
+>>> print(type(my_list) == list)
+False
 >>> print(my_list)
 []
 >>> my_list.print_sorted()
