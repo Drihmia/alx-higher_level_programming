@@ -14,7 +14,7 @@ class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         """
         Instantiation with width and height
-        
+
         Args:
             width (int) : the width
             height (int) : the height
@@ -47,4 +47,4 @@ class Rectangle(BaseGeometry):
         A string methode that return a frinedla msg
 
         """
-        return "[Rectange] " + str(self.__width) + "/" + str(self.__height)
+        return "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
