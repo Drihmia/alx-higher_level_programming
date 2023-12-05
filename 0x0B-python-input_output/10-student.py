@@ -39,6 +39,5 @@ class Student:
                 except Exception as e:
                     continue
                 atr = getattr(self, ele)
-                if atr:
-                    dic[ele] = atr
+                dic[ele] = atr
             return dic
