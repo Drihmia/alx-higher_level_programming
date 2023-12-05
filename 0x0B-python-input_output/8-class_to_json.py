@@ -11,11 +11,5 @@ def class_to_json(obj):
     structure (list, dictionary, string, integer and boolean) for JSON
     serialization of an object:
     """
-    par = dir(obj)
-    dic = {}
-    for ele in par:
-        attr = getattr(obj, ele)
-        if isinstance(attr, (int, str, float))\
-                and "doc" not in ele and "module" not in ele:
-            dic[ele] = attr
-    return dic
+    if obj:
+        return obj.__dict__
