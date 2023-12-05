@@ -20,10 +20,5 @@ finally:
     if a != 1:
         tmp = load_from_json_file(file_name)
 
-if len(args) == 1:
-    save_to_json_file(tmp, file_name)
-else:
-    save_to_json_file(tmp + sys.argv[1:], file_name)
-_list = load_from_json_file(file_name)
-if a != 1:
-    print(_list)
+
+save_to_json_file(tmp + sys.argv[1:], file_name)
