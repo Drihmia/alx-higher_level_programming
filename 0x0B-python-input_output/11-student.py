@@ -48,6 +48,6 @@ class Student:
             Args : (dict) json is always a dictionary
         """
 
-        self.first_name = json["first_name"]
-        self.last_name = json["last_name"]
-        self.age = json["age"]
+        setattr(self, "first_name", json["first_name"])
+        setattr(self, "last_name", json["last_name"])
+        setattr(self, "age", json["age"])
