@@ -7,6 +7,23 @@ import sys
 
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
-tmp = load_from_json_file("add_item.json")
-save_to_json_file(tmp + sys.argv[1:], "add_item.json")
-print(load_from_json_file("add_item.json"))
+
+file_name = "add_item.json"
+args = sys.argv
+a = 0
+try:
+    open(file_name)
+except Exception as e:
+    a = 1
+finally:
+    tmp = []
+    if a != 1:
+        tmp = load_from_json_file(file_name)
+
+if len(args) == 1:
+    save_to_json_file(tmp, file_name)
+else:
+    save_to_json_file(tmp + sys.argv[1:], file_name)
+_list = load_from_json_file(file_name)
+if a != 1:
+    print(_list)
