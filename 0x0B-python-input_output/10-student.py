@@ -33,11 +33,8 @@ class Student:
             if not len(lst):
                 return self.__dict__
             dic = {}
-            for ele in lst:
-                try:
-                    getattr(self, ele)
-                except Exception as e:
-                    continue
-                atr = getattr(self, ele)
-                dic[ele] = atr
+            dic_orig = self.__dict__
+            for key, ele in dic_orig.items():
+                if key in lst:
+                    dic[key] = ele
             return dic
