@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 this a script that reads fron stdin line by line and computes metrics.
+this a script that reads fron stdin line by line and computes metrics.
 """
 import sys
 
