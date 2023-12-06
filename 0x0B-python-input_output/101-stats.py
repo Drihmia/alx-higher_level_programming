@@ -40,10 +40,7 @@ def main():
             except (IndexError, ValueError):
                 continue
             if N_lines % 10 == 0:
-                try:
-                    print_sorted(dic, total_size)
-                except (IndexError, ValueError):
-                    pass
+                print_sorted(dic, total_size)
         print_sorted(dic, total_size)
     except KeyboardInterrupt as e:
         print_sorted(dic, total_size)
