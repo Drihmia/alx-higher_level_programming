@@ -44,15 +44,9 @@ def main():
                     print_sorted(dic, total_size)
                 except (IndexError, ValueError):
                     pass
-        try:
-            print_sorted(dic, total_size)
-        except (IndexError, ValueError):
-            pass
+        print_sorted(dic, total_size)
     except KeyboardInterrupt as e:
-        try:
-            print_sorted(dic, total_size)
-        except (IndexError, ValueError):
-            pass
+        print_sorted(dic, total_size)
 
 
 if __name__ == "__main__":
