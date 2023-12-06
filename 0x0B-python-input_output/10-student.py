@@ -16,7 +16,7 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self, lst=[]):
+    def to_json(self, lst=[-1]):
         """
         A method that retrieves a dictionary representation of a
         Student instance (same as 8-class_to_json.py).
@@ -31,6 +31,8 @@ class Student:
         """
         if type(lst) is list:
             if not len(lst):
+                return {}
+            if lst[0] == -1:
                 return self.__dict__
             dic = {}
             dic_orig = self.__dict__
