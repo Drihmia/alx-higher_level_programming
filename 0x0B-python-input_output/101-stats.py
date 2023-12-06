@@ -20,6 +20,7 @@ while True:
             dic[tmp] = 1
         if N_lines >= 10:
             break
+    dic = dict(sorted(dic.items()))
     for key, value in dic.items():
         print(str(key) + ":", value)
     print("File size:", total_size)
