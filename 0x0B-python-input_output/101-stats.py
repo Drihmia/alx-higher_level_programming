@@ -17,25 +17,26 @@ def main():
         N_lines = 0
         for lin in sys.stdin:
             N_lines += 1
-            line = lin.split()
             try:
+                line = lin.split()
                 total_size += int(line[-1])
-            except Exception:
-                continue
-            try:
                 tmp = line[-2]
+                if tmp in dic:
+                    dic[tmp] += 1
+                else:
+                    dic[tmp] = 1
             except Exception:
                 continue
-            if tmp in dic:
-                dic[tmp] += 1
-            else:
-                dic[tmp] = 1
             if N_lines >= 10:
                 break
-        dic = dict(sorted(dic.items()))
-        print("File size:", total_size)
-        for key, value in dic.items():
-            print(str(key) + ":", value)
+        try:
+            dic = dict(sorted(dic.items()))
+        except Exception:
+            continue
+        finally:
+            print("File size:", total_size)
+            for key, value in dic.items():
+                print(str(key) + ":", value)
 
 
 if __name__ == "__main__":
