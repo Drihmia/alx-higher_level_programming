@@ -7,6 +7,10 @@ import sys
 
 
 def print_sorted(dic, size):
+    """
+    A fucntion that sort a dic by keys and print
+        the size and the dictionary
+    """
     dic = dict(sorted(dic.items()))
     print("File size:", size, flush=True)
     for key, value in dic.items():
@@ -30,10 +34,9 @@ def main():
                 tmp = int(tmp)
                 if tmp in dic:
                     dic[tmp] += 1
-                    N_lines += 1
                 else:
-                    N_lines += 1
                     dic[tmp] = 1
+                N_lines += 1
             except (IndexError, ValueError):
                 continue
             if N_lines % 10 == 0:
