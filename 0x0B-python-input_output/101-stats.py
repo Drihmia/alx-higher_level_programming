@@ -27,9 +27,9 @@ def main():
             if N_lines >= 10:
                 break
         dic = dict(sorted(dic.items()))
+        print("File size:", total_size)
         for key, value in dic.items():
             print(str(key) + ":", value)
-        print("File size:", total_size)
 
 
 if __name__ == "__main__":
