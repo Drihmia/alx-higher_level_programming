@@ -6,6 +6,13 @@ this a script that reads fron stdin line by line and computes metrics.
 import sys
 
 
+def print_sorted(dic, size):
+    dic = dict(sorted(dic.items()))
+    print("File size:", size, flush=True)
+    for key, value in dic.items():
+        print(str(key) + ":", value, flush=True)
+
+
 def main():
     """
     main funtion : entry point
@@ -31,20 +38,18 @@ def main():
                 continue
             if N_lines % 10 == 0:
                 try:
-                    dic = dict(sorted(dic.items()))
+                    print_sorted(dic, total_size)
                 except (IndexError, ValueError):
                     pass
-                print("File size:", total_size, flush=True)
-                for key, value in dic.items():
-                    print(str(key) + ":", value, flush=True)
-        print("File size:", total_size, flush=True)
-        for key, value in dic.items():
-            print(str(key) + ":", value, flush=True)
+        try:
+            print_sorted(dic, total_size)
+        except (IndexError, ValueError):
+            pass
     except KeyboardInterrupt as e:
-        sys.stdout.flush()
-        print("File size:", total_size, flush=True)
-        for key, value in dic.items():
-            print(str(key) + ":", value, flush=True)
+        try:
+            print_sorted(dic, total_size)
+        except (IndexError, ValueError):
+            pass
 
 
 if __name__ == "__main__":
