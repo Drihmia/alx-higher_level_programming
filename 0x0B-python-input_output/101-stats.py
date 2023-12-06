@@ -13,34 +13,37 @@ def main():
 
     dic = {}
     total_size = 0
+    N_lines = 0
     try:
-        while True:
-            N_lines = 0
-            for lin in sys.stdin:
-                N_lines += 1
-                try:
-                    line = lin.split()
-                    total_size += int(line[-1])
-                    tmp = line[-2]
-                    if tmp in dic:
-                        dic[tmp] += 1
-                    else:
-                        dic[tmp] = 1
-                except (IndexError, ValueError):
-                    pass
-                if N_lines >= 10:
-                    break
+        for lin in sys.stdin:
             try:
-                dic = dict(sorted(dic.items()))
+                line = lin.split()
+                total_size += int(line[-1])
+                tmp = line[-2]
+                if tmp in dic:
+                    dic[tmp] += 1
+                    N_lines += 1
+                else:
+                    N_lines += 1
+                    dic[tmp] = 1
             except (IndexError, ValueError):
                 pass
-            finally:
-                print("File size:", total_size)
+            if N_lines % 10 == 0:
+                try:
+                    dic = dict(sorted(dic.items()))
+                except (IndexError, ValueError):
+                    pass
+                print("File size:", total_size, flush=True)
                 for key, value in dic.items():
-                    print(str(key) + ":", value)
+                    print(str(key) + ":", value, flush=True)
+        print("File size:", total_size, flush=True)
+        for key, value in dic.items():
+            print(str(key) + ":", value, flush=True)
     except KeyboardInterrupt as e:
-        print(e)
-        print("File size:", total_size)
+        sys.stdout.flush()
+        print("File size:", total_size, flush=True)
+        for key, value in dic.items():
+            print(str(key) + ":", value, flush=True)
 
 
 if __name__ == "__main__":
