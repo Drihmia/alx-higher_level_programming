@@ -47,7 +47,7 @@ class Student:
 
             Args : (dict) json is always a dictionary
         """
-
-        setattr(self, "first_name", json["first_name"])
-        setattr(self, "last_name", json["last_name"])
-        setattr(self, "age", json["age"])
+        if json is not None and len(json):
+            setattr(self, "first_name", json["first_name"])
+            setattr(self, "last_name", json["last_name"])
+            setattr(self, "age", json["age"])
