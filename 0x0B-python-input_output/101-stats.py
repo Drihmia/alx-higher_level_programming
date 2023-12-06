@@ -18,8 +18,14 @@ def main():
         for lin in sys.stdin:
             N_lines += 1
             line = lin.split()
-            total_size += int(line[-1])
-            tmp = line[-2]
+            try:
+                total_size += int(line[-1])
+            except Exception:
+                continue
+            try:
+                tmp = line[-2]
+            except Exception:
+                continue
             if tmp in dic:
                 dic[tmp] += 1
             else:
