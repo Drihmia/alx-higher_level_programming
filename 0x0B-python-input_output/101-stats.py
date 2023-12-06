@@ -26,19 +26,20 @@ def main():
                         dic[tmp] += 1
                     else:
                         dic[tmp] = 1
-                except Exception:
+                except (IndexError, ValueError):
                     pass
                 if N_lines >= 10:
                     break
             try:
                 dic = dict(sorted(dic.items()))
-            except Exception:
+            except (IndexError, ValueError):
                 pass
             finally:
                 print("File size:", total_size)
                 for key, value in dic.items():
                     print(str(key) + ":", value)
-    except KeyboardInterrupt:
+    except KeyboardInterrupt as e:
+        print(e)
         print("File size:", total_size)
 
 
