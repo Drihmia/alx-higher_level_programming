@@ -20,6 +20,7 @@ def main():
                 line = lin.split()
                 total_size += int(line[-1])
                 tmp = line[-2]
+                tmp = int(tmp)
                 if tmp in dic:
                     dic[tmp] += 1
                     N_lines += 1
@@ -27,7 +28,7 @@ def main():
                     N_lines += 1
                     dic[tmp] = 1
             except (IndexError, ValueError):
-                pass
+                continue
             if N_lines % 10 == 0:
                 try:
                     dic = dict(sorted(dic.items()))
