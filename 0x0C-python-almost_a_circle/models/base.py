@@ -32,17 +32,7 @@ class Base:
         if list_dictionaries is None or type(list_dictionaries) is not list\
                 or len(list_dictionaries) == 0:
             return "[]"
-
-        list_dict_copy = []
-        for dct in list_dictionaries:
-            if type(dct) is dict:
-                list_dict_copy.append(dct)
-
-        st = "["
-        for dict_l in list_dict_copy:
-            st += json.dumps(dict_l) + ", "
-        return st[:-2] + "]"
-
+        return json.dumps(list_dictionaries)
     @classmethod
     def save_to_file(cls, list_objs):
         """
@@ -110,23 +100,15 @@ class Base:
             return None
 
         if cls.__name__ == "Rectangle":
-            list_d = ["id", "width", "height", "x", "y"]
             list_d_mandatory = ["width", "height"]
         elif cls.__name__ == "Square":
-            list_d = ["id", "size", "x", "y"]
             list_d_mandatory = ["size"]
         else:
             list_d_mandatory = []
-            list_d = []
 
         # check if the minimum of positional argument are given.
         for mand in list_d_mandatory:
             if mand not in dictionary:
-                return None
-
-        # check if key in dictionary is a actual argument of that object.
-        for key in dictionary:
-            if key not in list_d:
                 return None
 
         dummy = cls(1, 1)
