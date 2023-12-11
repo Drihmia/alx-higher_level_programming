@@ -100,9 +100,6 @@ class Rectangle(Base):
         """ Display, prints in stdout the Rectangle instance
         with the character #
         """
-        # b = ["#" * self.width for _ in range(self.height)]
-        # a = "\n".join(b)
-        # print(a)
 
         line = (" " * self.x + "#" * self.width + "\n")
         c = "\n" * self.y + line * self.height

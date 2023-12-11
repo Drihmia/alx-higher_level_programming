@@ -30,7 +30,7 @@ class Base:
             of list_dictionaries.
         """
         if list_dictionaries is None:
-            list_dictionaries = []
+            return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
@@ -79,9 +79,8 @@ class Base:
         json_obj = []
         try:
             json_obj = json.loads(json_string)
-        except Exception as e:
-            print("error from_json_string_Base: ", e,
-                  " - to be set right later")
+        except Exception:
+            return []
         return json_obj
 
     @classmethod
@@ -104,7 +103,7 @@ class Base:
         elif cls.__name__ == "Square":
             list_d_mandatory = ["size"]
         else:
-            list_d_mandatory = []
+            return
 
         # check if the minimum of positional argument are given.
         for mand in list_d_mandatory:
