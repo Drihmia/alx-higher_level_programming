@@ -29,10 +29,10 @@ class Base:
         A method that returns the JSON string representation
             of list_dictionaries.
         """
-        if list_dictionaries is None or type(list_dictionaries) is not list\
-                or len(list_dictionaries) == 0:
+        if list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """
