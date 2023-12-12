@@ -16,7 +16,7 @@ class TestBaseClass(unittest.TestCase):
         Rectangle.save_to_file([b1])
         with open("Rectangle.json", "r") as file:
             file_content = file.read()
-            st = '[{"id": 4, "width": 54, "height": 23, "x": 0, "y": 0}]'
+            st = '[{"id": 2, "width": 54, "height": 23, "x": 0, "y": 0}]'
             self.assertEqual(file_content, st)
 
     def test_from_json_string(self):
@@ -39,7 +39,7 @@ class TestBaseClass(unittest.TestCase):
         Rectangle.save_to_file_csv([b1])
         with open("Rectangle.csv", "r") as file:
             file_content = file.read()
-            self.assertEqual(file_content, '5,98,65,0,0\n')
+            self.assertEqual(file_content, '3,98,65,0,0\n')
 
     def test_load_from_file_csv(self):
         with open("Rectangle.csv", "w") as file:
@@ -56,10 +56,10 @@ class TestId(unittest.TestCase):
         self.assertEqual(b1.id, int(1))
 
         a1 = Rectangle(34, 42)
-        self.assertEqual(a1.id, int(7))
+        self.assertEqual(a1.id, int(5))
 
         c1 = Square(23, 23)
-        self.assertEqual(c1.id, int(8))
+        self.assertEqual(c1.id, int(6))
 
         b1 = Base()
         self.assertEqual(b1.id, int(2))
