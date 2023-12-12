@@ -1,5 +1,6 @@
 import unittest
 from models.square import Square
+import pep8
 
 
 class TestId(unittest.TestCase):
@@ -56,6 +57,13 @@ class TestId(unittest.TestCase):
         # ValueError for X
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             Square(43, -4, 0)
+
+    def test_pep8_base(self):
+        """Test that the base module conforms to PEP8."""
+        style = pep8.StyleGuide()
+        result = style.check_files(['models/base.py'])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).")
 
 
 if __name__ == "__main__":
