@@ -1,6 +1,8 @@
+"""Simple unittest module"""
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+from models.square import Square
 
 class TestBaseClass(unittest.TestCase):
     def test_to_json_string(self):
@@ -43,6 +45,30 @@ class TestBaseClass(unittest.TestCase):
            file.write('2,15,25,35,45\n')  # Instance 2 data
 
        loaded_instances = Rectangle.load_from_file_csv()
+
+class TestId(unittest.TestCase):
+    """simple test unit for id"""
+
+    def test_id(self):
+        """Test if id is an integer"""
+        b1 = Base()
+        self.assertEqual(b1.id, int(1))
+
+        a1 = Rectangle(34, 42)
+        self.assertEqual(a1.id, int(7))
+
+        c1 = Square(23, 23)
+        self.assertEqual(c1.id, int(8))
+
+        b1 = Base()
+        self.assertEqual(b1.id, int(2))
+
+        b1 = Base(32)
+        self.assertEqual(b1.id, int(32))
+
+        b1 = Base()
+        self.assertEqual(b1.id, int(3))
+
 
 if __name__ == '__main__':
     unittest.main()
