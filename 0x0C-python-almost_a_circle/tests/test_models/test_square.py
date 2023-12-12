@@ -1,6 +1,7 @@
 import unittest
 from models.square import Square
 
+
 class TestId(unittest.TestCase):
     def test_size_and_normal(self):
         r1 = Square(12, 13)
@@ -56,6 +57,6 @@ class TestId(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             Square(43, -4, 0)
 
+
 if __name__ == "__main__":
     unittest.main()
-

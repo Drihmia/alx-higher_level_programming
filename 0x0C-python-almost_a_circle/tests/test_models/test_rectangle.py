@@ -1,6 +1,7 @@
 import unittest
 from models.rectangle import Rectangle
 
+
 class TestId(unittest.TestCase):
     def test_width_and_height_normal(self):
         r1 = Rectangle(12, 13)
@@ -93,6 +94,6 @@ class TestId(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             Rectangle(43, 2, -4, 0)
 
+
 if __name__ == "__main__":
     unittest.main()
-

@@ -4,6 +4,7 @@ from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 
+
 class TestBaseClass(unittest.TestCase):
     def test_to_json_string(self):
         b1 = Rectangle(765, 32)
@@ -15,7 +16,8 @@ class TestBaseClass(unittest.TestCase):
         Rectangle.save_to_file([b1])
         with open("Rectangle.json", "r") as file:
             file_content = file.read()
-            self.assertEqual(file_content, '[{"id": 4, "width": 54, "height": 23, "x": 0, "y": 0}]')
+            st = '[{"id": 4, "width": 54, "height": 23, "x": 0, "y": 0}]'
+            self.assertEqual(file_content, st)
 
     def test_from_json_string(self):
         json_string = '[{"id": 1}]'
@@ -36,15 +38,14 @@ class TestBaseClass(unittest.TestCase):
         b1 = Rectangle(98, 65)
         Rectangle.save_to_file_csv([b1])
         with open("Rectangle.csv", "r") as file:
-           file_content = file.read()
-           self.assertEqual(file_content, '5,98,65,0,0\n')
+            file_content = file.read()
+            self.assertEqual(file_content, '5,98,65,0,0\n')
 
     def test_load_from_file_csv(self):
-       with open("Rectangle.csv", "w") as file:
-           file.write('1,10,20,30,40\n')  # Instance 1 data
-           file.write('2,15,25,35,45\n')  # Instance 2 data
+        with open("Rectangle.csv", "w") as file:
+            file.write('1,10,20,30,40\n')
+            file.write('2,15,25,35,45\n')
 
-       loaded_instances = Rectangle.load_from_file_csv()
 
 class TestId(unittest.TestCase):
     """simple test unit for id"""
@@ -72,4 +73,3 @@ class TestId(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
