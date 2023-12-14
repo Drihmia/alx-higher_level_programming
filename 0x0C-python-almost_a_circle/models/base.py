@@ -20,8 +20,8 @@ class Base:
         if id is not None:
             self.id = id
         else:
-            type(self).__nb_objects += 1
-            self.id = type(self).__nb_objects
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -79,7 +79,9 @@ class Base:
         json_obj = []
         try:
             json_obj = json.loads(json_string)
-        except Exception:
+        except Exception as e:
+            print(f"Exception while reading file in load_from_file: {e}")
+
             return []
         return json_obj
 
@@ -131,7 +133,7 @@ class Base:
         try:
             with open(file_name, "r", encoding="utf-8") as f:
                 list_dict_str = f.read()
-        except (FileNotFoundError, FileExistsError):
+        except:
             return []
         list_dict_obj = cls.from_json_string(list_dict_str)
         list_objs = [cls.create(**di) for di in list_dict_obj]
@@ -261,14 +263,16 @@ class Base:
 
         y, x = dictionary["y"], dictionary["x"]
 
-        t = turtle.Turtle()
+        t = turtle.Turtle(visible=False)
+        t.shape("turtle")
+
         t.pen(fillcolor=color, pencolor="green", pensize=pen_size,
               resizemode="auto", outline=pen_size, speed=3)
         t.penup()
         t.setposition(x, y)
         t.pendown()
 
-        t.setposition(x, y)
+        t.showturtle()
         t.begin_fill()
         for _ in range(2):
             t.forward(w)
@@ -276,7 +280,4 @@ class Base:
             t.forward(h)
             t.left(90)
         t.end_fill()
-
-        t.penup()
-        t.setposition(0, 0)
-        t.pendown()
+        t.hideturtle()

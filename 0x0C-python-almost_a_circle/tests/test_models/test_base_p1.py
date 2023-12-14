@@ -1,5 +1,6 @@
 """Simple unittest module"""
 import unittest
+from unittest.mock import patch
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -8,7 +9,7 @@ import pep8
 
 class TestBaseClass(unittest.TestCase):
     def test_to_json_string(self):
-        b1 = Rectangle(765, 32)
+        Rectangle(765, 32)
         json_string = Rectangle.to_json_string([{"id": 1}])
         self.assertEqual(json_string, '[{"id": 1}]')
 
@@ -25,13 +26,15 @@ class TestBaseClass(unittest.TestCase):
         list_of_dicts = Base.from_json_string(json_string)
         self.assertEqual(list_of_dicts, [{'id': 1}])
 
-    def test_create(self):
+    @patch('builtins.print')
+    def test_create(self, mock_print):
         r1 = Rectangle.create(**{'height': 4, 'width': 10, "id": 1})
-        print(type(r1))
+        print(str(type(r1)))
+        mock_print.assert_called_with('<class \'models.rectangle.Rectangle\'>')
 
     def test_load_from_file(self):
         with open("Rectangle.json", "w") as file:
-            file.write('[{"id": 1}]')
+            file.write('[{"id": 12}]')
         loaded_instances = Rectangle.load_from_file()
         self.assertEqual(len(loaded_instances), 1)
 
@@ -54,22 +57,22 @@ class TestId(unittest.TestCase):
     def test_id(self):
         """Test if id is an integer"""
         b1 = Base()
-        self.assertEqual(b1.id, int(1))
+        self.assertEqual(b1.id, int(5))
 
         a1 = Rectangle(34, 42)
-        self.assertEqual(a1.id, int(5))
+        self.assertEqual(a1.id, int(6))
 
         c1 = Square(23, 23)
-        self.assertEqual(c1.id, int(6))
+        self.assertEqual(c1.id, int(7))
 
         b1 = Base()
-        self.assertEqual(b1.id, int(2))
+        self.assertEqual(b1.id, int(8))
 
         b1 = Base(32)
         self.assertEqual(b1.id, int(32))
 
         b1 = Base()
-        self.assertEqual(b1.id, int(3))
+        self.assertEqual(b1.id, int(9))
 
     def test_pep8_base(self):
         """Test that the base module conforms to PEP8."""

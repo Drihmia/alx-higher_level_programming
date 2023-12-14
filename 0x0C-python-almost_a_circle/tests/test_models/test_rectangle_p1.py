@@ -102,6 +102,13 @@ class TestId(unittest.TestCase):
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
+    def test_pep8_base(self):
+        """Test that the rectangle module conforms to PEP8."""
+        style = pep8.StyleGuide()
+        result = style.check_files(['models/rectangle.py'])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).")
+
 
 if __name__ == "__main__":
     unittest.main()
