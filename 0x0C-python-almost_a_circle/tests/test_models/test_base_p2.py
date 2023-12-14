@@ -43,21 +43,43 @@ class TestBase(unittest.TestCase):
         """
         Test the save_to_file() method.
         """
-        # remove file square and rectangle that has been created by old tests.
+        # remove file rectangle that has been created by old tests.
         if os.path.exists("Rectangle.json"):
             os.remove("Rectangle.json")
 
-        # Test with no list of objects for Rectangle's class
+        # Test with for Rectangle's class
+        # no list of objects
         Rectangle.save_to_file(None)
         self.assertTrue(os.path.exists("Rectangle.json"))
 
+        # remove file ectangle that has been created by old tests.
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
+
+        # Test with for Rectangle's class
+        # an empty list of objects
+        Rectangle.save_to_file([])
+        self.assertTrue(os.path.exists("Rectangle.json"))
+
+        # remove file square that has been created by old tests.
         if os.path.exists("Square.json"):
             os.remove("Square.json")
 
-        # Test with no list of objects for Square's class
+        # Test with for Square's class
+        # no list of objects
         Square.save_to_file(None)
         self.assertTrue(os.path.exists("Square.json"))
 
+        # remove file square that has been created by old tests.
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
+
+        # Test with for Square's class
+        # an empty list of objects
+        Square.save_to_file([])
+        self.assertTrue(os.path.exists("Square.json"))
+
+        # VALIDE TESTS
         # Test with a list of rectngle's objects
         R = Rectangle
         list_objects = [R(width=45, height=98), R(width=77, height=88)]
@@ -69,6 +91,10 @@ class TestBase(unittest.TestCase):
         Square.save_to_file(list_objects)
         self.assertTrue(os.path.exists("Square.json"))
 
+        # Test with a list of rectngle's objects
+        list_objects = [Square(1)]
+        Square.save_to_file(list_objects)
+        self.assertTrue(os.path.exists("Square.json"))
     def test_from_json_string(self):
         """
         Test the from_json_string() method.

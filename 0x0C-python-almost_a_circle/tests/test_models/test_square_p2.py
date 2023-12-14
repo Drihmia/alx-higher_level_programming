@@ -27,10 +27,10 @@ class TestSquare(unittest.TestCase):
         Test the __str__ method.
         """
         s1 = Square(10)
-        self.assertEqual(str(s1), "[Square] (76) 0/0 - 10")
+        self.assertEqual(str(s1), "[Square] (78) 0/0 - 10")
 
         s2 = Square(20, 30, 40)
-        self.assertEqual(str(s2), "[Square] (77) 30/40 - 20")
+        self.assertEqual(str(s2), "[Square] (79) 30/40 - 20")
 
     def test_size(self):
         """
@@ -56,14 +56,14 @@ class TestSquare(unittest.TestCase):
 
         s2 = Square(10)
         s2.update(size=3)
-        self.assertEqual(s2.id, 81)
+        self.assertEqual(s2.id, 83)
         self.assertEqual(s2.size, 3)
         self.assertEqual(s2.x, 0)
         self.assertEqual(s2.y, 0)
 
         s3 = Square(10)
         s3.update(x=3, y=4)
-        self.assertEqual(s3.id, 82)
+        self.assertEqual(s3.id, 84)
         self.assertEqual(s3.size, 10)
         self.assertEqual(s3.x, 3)
         self.assertEqual(s3.y, 4)
@@ -81,14 +81,14 @@ class TestSquare(unittest.TestCase):
         """
         s1 = Square(10)
         dict_s1 = s1.to_dictionary()
-        self.assertEqual(dict_s1["id"], 78)
+        self.assertEqual(dict_s1["id"], 80)
         self.assertEqual(dict_s1["size"], 10)
         self.assertEqual(dict_s1["x"], 0)
         self.assertEqual(dict_s1["y"], 0)
 
         s2 = Square(20, 30, 40)
         dict_s2 = s2.to_dictionary()
-        self.assertEqual(dict_s2["id"], 79)
+        self.assertEqual(dict_s2["id"], 81)
         self.assertEqual(dict_s2["size"], 20)
         self.assertEqual(dict_s2["x"], 30)
         self.assertEqual(dict_s2["y"], 40)
