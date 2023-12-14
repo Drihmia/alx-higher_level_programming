@@ -65,6 +65,9 @@ class TestId(unittest.TestCase):
         c1 = Square(23, 23)
         self.assertEqual(c1.id, int(7))
 
+        c1 = Square(23, 23, 2, 3)
+        self.assertEqual(c1.id, int(3))
+
         b1 = Base()
         self.assertEqual(b1.id, int(8))
 

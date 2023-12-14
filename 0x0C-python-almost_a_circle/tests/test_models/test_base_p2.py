@@ -79,6 +79,10 @@ class TestBase(unittest.TestCase):
         Square.save_to_file([])
         self.assertTrue(os.path.exists("Square.json"))
 
+        # the file Square.json exist.
+        Square.save_to_file([])
+        self.assertTrue(os.path.exists("Square.json"))
+
         # VALIDE TESTS
         # Test with a list of rectngle's objects
         R = Rectangle
