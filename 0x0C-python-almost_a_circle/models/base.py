@@ -133,7 +133,7 @@ class Base:
         try:
             with open(file_name, "r", encoding="utf-8") as f:
                 list_dict_str = f.read()
-        except:
+        except Exception:
             return []
         list_dict_obj = cls.from_json_string(list_dict_str)
         list_objs = [cls.create(**di) for di in list_dict_obj]
