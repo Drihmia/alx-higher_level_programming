@@ -1,2 +1,3 @@
 -- a script that lists all databases of your MySQL server.
-SELECT user FROM mysql.user
+-- testing for two last red checkers of 5
+SHOW DATABASES;
