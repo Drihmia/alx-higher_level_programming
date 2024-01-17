@@ -3,4 +3,4 @@
 -- The database name will be passed as an argument of the mysql command
 Update second_table
 set score = 10
-WHERE id = 3;
+WHERE name = 'Bob';
