@@ -5,8 +5,8 @@
 -- You can use only one SELECT statement
 -- The database name will be passed as an argument of the mysql command.
 SELECT title FROM tv_shows
-join tv_show_genres
-join tv_genres
+JOIN tv_show_genres
+JOIN tv_genres
 ON tv_genres.id = tv_show_genres.genre_id AND 
 tv_shows.id = tv_show_genres.show_id
 WHERE tv_genres.name = 'Comedy'
