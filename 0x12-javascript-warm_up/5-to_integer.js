@@ -1,11 +1,8 @@
 #!/usr/bin/node
 const args = process.argv;
-try {
-  if (!isNaN(1 * args[2])) {
-    console.log(~~(args[2]));
-  } else {
-    throw new Error('Not a number');
-  }
-} catch (error) {
-  console.log(error.message);
+
+if (!isNaN(1 * args[2])) {
+  console.log('My number:', ~~(args[2]));
+} else {
+  console.log('Not a number');
 }
