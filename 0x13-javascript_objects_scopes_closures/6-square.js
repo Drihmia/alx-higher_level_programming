@@ -5,10 +5,10 @@ module.exports = class Square extends pSquare {
     if (c === undefined) {
       c = 'X';
     }
-    if (this.size) {
-      let str = 'X'.repeat(this.size);
+    if (this.height) {
+      let str = c.repeat(this.height);
       str += ('\n');
-      str = str.repeat(this.size);
+      str = str.repeat(this.height);
       console.log(str.slice(0, -1));
     }
   }
