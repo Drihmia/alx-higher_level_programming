@@ -1,3 +1,3 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 const ad = require('./13-add').add;
 console.log(ad(3, 5));

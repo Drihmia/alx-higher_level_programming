@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 
 const arraystring = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 

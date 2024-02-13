@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 // I ve used the while loop in this example.
 
 const str = 'x';

@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 // I ve used the for loop in this example.
 
 const str = 'C is fun';
