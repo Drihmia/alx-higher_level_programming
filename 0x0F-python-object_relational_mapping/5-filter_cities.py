@@ -26,7 +26,7 @@ if __name__ == "__main__":
             FROM {0}\
             join {1}\
             on {0}.state_id = {1}.id\
-            WHERE {1}..name = '{2}'\
+            WHERE {1}.name = '{2}'\
             GROUP BY {0}.id\
             ORDER BY {0}.id ASC\
             ".format("cities", "states", sName)

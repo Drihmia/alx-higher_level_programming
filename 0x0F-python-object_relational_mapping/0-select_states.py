@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    t_query = "SELECT * FROM {} ORDER BY id ASC".format("states")
+    t_query = "SELECT * FROM {0} ORDER BY {0}.id ASC".format("states")
     cur.execute(t_query)
 
     info = cur.fetchall()

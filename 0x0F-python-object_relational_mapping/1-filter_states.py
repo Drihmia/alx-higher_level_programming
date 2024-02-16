@@ -17,7 +17,6 @@ if __name__ == "__main__":
 
     t_query = "SELECT * FROM {0}\
             WHERE name LIKE 'N%'\
-            GROUP BY {0}.id\
             ORDER BY {0}.id ASC\
             ".format("states")
 
