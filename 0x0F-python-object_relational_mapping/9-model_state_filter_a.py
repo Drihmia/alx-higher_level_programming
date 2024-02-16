@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """ a script that lists all "State" objects from the database "hbtn_0e_6_usa"
 
 that contain the letter a
@@ -7,8 +7,9 @@ The "state" you display must be the first in "states.id"
 
 Nothing followed by a new line will be printed if the table states is empty
 The code won't not be executed when imported.
-"""
 
+Usage: script <mysql UserName> <mysql PassWord> <mysql DatabaseName>
+"""
 
 if __name__ == "__main__":
     from model_state import Base, State
@@ -25,7 +26,7 @@ if __name__ == "__main__":
     sess = Session()
 
     t_query = sess.query(State).where(State.name.like("%a%"))
-    letter_a = t_query.group_by(State.id).order_by(State.id.asc())
+    letter_a = t_query.order_by(State.id.asc())
     results = letter_a.all()
     if (results):
         for s in results:
