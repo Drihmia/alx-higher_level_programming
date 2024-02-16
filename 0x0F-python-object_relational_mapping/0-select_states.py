@@ -1,14 +1,17 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """ a script that lists all states from the database hbtn_0e_0_usa,
 that takes 3 arguments: mysql username, mysql password and database name.
 no argument validation needed.
+
+Usage: script <mysql UserName> <mysql PassWord> <mysql DatabaseName>
 """
 import MySQLdb
+from sys import argv
 
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost", port=3306, user="root",
-                         db="hbtn_0e_0_usa")
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                         passwd=argv[2], db=argv[3], charset="utf8")
 
     cur = db.cursor()
 
