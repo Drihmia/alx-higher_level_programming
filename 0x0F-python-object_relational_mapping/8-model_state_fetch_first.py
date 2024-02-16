@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """ a script that lists all "State" objects from the database "hbtn_0e_6_usa"
 
 The "state" you display must be the first in "states.id"
@@ -23,11 +23,10 @@ if __name__ == "__main__":
     sess = Session()
 
     t_query = sess.query(State).group_by(State.id).order_by(State.id.asc())
-    limit = t_query.limit(1)
-    results = limit.all()
+    results = t_query.first()
     if (results):
-        for s in results:
-            print("{}: {}".format(s.id, s.name))
+        print("{}: {}".format(results.id, results.name))
     else:
         print("Nothing")
+
     sess.close()

@@ -9,6 +9,7 @@ Nothing followed by a new line will be printed if the table states is empty
 The code won't not be executed when imported.
 """
 
+
 if __name__ == "__main__":
     from model_state import Base, State
     from sqlalchemy import create_engine
