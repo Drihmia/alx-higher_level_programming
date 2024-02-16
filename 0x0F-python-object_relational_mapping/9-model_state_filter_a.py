@@ -31,6 +31,5 @@ if __name__ == "__main__":
     if (results):
         for s in results:
             print("{}: {}".format(s.id, s.name))
-    else:
-        print("Nothing")
+
     sess.close()
