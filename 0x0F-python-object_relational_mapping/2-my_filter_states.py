@@ -3,7 +3,9 @@
 that takes 3 arguments: mysql username, mysql password and database name.
 no argument validation needed.
 
-Usage: script UserName PassWord DatabaseName StateName (searched)
+Usage: script\
+        <mysql UserName> <mysql PassWord> <mysql DatabaseName>\
+        <mysql StateName> (searched)
 """
 import MySQLdb
 from sys import argv
@@ -15,8 +17,11 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    t_query = "SELECT * FROM {0} WHERE name='{1}' ORDER BY {0}.id ASC".format(
-            "states", argv[4])
+    t_query = "SELECT * FROM {0}\
+            WHERE name='{1}'\
+            GROUP BY {0}.id\
+            ORDER BY {0}.id ASC\
+            ".format("states", argv[4])
     cur.execute(t_query)
 
     info = cur.fetchall()

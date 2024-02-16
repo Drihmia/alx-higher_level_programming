@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-""" a script that lists all states from the database hbtn_0e_0_usa,
-that takes 3 arguments: mysql username, mysql password and database name.
-no argument validation needed.
+""" a script that lists all "cities" from the database "hbtn_0e_0_usa",
 
-Usage: script UserName PassWord DatabaseName StateName (searched)
+Usage: script <mysql UserName> <mysql PassWord> <mysql DatabaseName>
 """
 import MySQLdb
 from sys import argv

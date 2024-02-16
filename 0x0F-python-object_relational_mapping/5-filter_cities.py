@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-""" a script that lists all states from the database hbtn_0e_0_usa,
-that takes 3 arguments: mysql username, mysql password and database name.
-no argument validation needed.
+""" a script that takes in the name of a state as an argument and lists all
+"cities" of that state, using the database "hbtn_0e_4_usa"
 
-Usage: script UserName PassWord DatabaseName StateName (searched)
+Usage: script\
+        <mysql UserName> <mysql PassWord> <mysql DatabaseName>\
+        <mysql StateName> (searched + safe from MySQL injection)
 """
 import MySQLdb
 from sys import argv
@@ -25,7 +26,7 @@ if __name__ == "__main__":
             FROM {0}\
             join {1}\
             on {0}.state_id = {1}.id\
-            WHERE states.name = '{2}'\
+            WHERE {1}..name = '{2}'\
             GROUP BY {0}.id\
             ORDER BY {0}.id ASC\
             ".format("cities", "states", sName)
@@ -35,7 +36,7 @@ if __name__ == "__main__":
     info = cur.fetchall()
     st = ""
     for i in info:
-        st += i[0] + ", ";
+        st += i[0] + ", "
     print(st[:-2])
 
     cur.close()
