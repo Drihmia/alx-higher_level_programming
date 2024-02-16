@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ a script that lists the 1st "State" objects from the db "hbtn_0e_6_usa"
 
 The "state" displayed is the first in "states.id"
