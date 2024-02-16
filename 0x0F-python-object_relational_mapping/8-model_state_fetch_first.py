@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-""" a script that lists all "State" objects from the database "hbtn_0e_6_usa"
+""" a script that lists the 1st "State" objects from the db "hbtn_0e_6_usa"
 
-The "state" you display must be the first in "states.id"
+The "state" displayed is the first in "states.id"
 
-Nothing followed by a new line will be printed if the table states is empty
+"Nothing" followed by a new line will be printed if the table states is empty
 The code won't not be executed when imported.
+
+Usage: script <mysql UserName> <mysql PassWord> <mysql DatabaseName>
 """
 
 
@@ -22,8 +24,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     sess = Session()
 
-    t_query = sess.query(State).group_by(State.id).order_by(State.id.asc())
-    results = t_query.first()
+    results = sess.query(State).first()
     if (results):
         print("{}: {}".format(results.id, results.name))
     else:
