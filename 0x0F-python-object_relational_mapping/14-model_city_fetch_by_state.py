@@ -4,6 +4,8 @@
 Results is be sorted in ascending order by "cities.id"
 
 The code won't not be executed when imported.
+
+Usage: script <mysql UserName> <mysql PassWord> <mysql DatabaseName>
 """
 
 if __name__ == "__main__":

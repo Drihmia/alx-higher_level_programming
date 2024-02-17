@@ -18,7 +18,7 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     t_query = "SELECT * FROM {0}\
-            WHERE name='{1}'\
+            WHERE {0}.name='{1}'\
             ORDER BY {0}.id ASC\
             ".format("states", argv[4])
     cur.execute(t_query)
