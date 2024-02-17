@@ -18,14 +18,15 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     t_query = "SELECT * FROM {0}\
-            WHERE {0}.name='{1}'\
+            WHERE {0}.name = '{1}'\
             ORDER BY {0}.id ASC\
             ".format("states", argv[4])
     cur.execute(t_query)
 
     info = cur.fetchall()
-    for i in info:
-        print(i)
+    for row in info:
+        if len(row) == 2:
+            print("({}, \'{}\')".format(row[0], row[1]))
 
     cur.close()
     db.close()

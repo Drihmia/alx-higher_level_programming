@@ -23,8 +23,9 @@ if __name__ == "__main__":
     cur.execute(t_query)
 
     info = cur.fetchall()
-    for i in info:
-        print(i)
+    for row in info:
+        if len(row) == 2:
+            print("({}, \'{}\')".format(row[0], row[1]))
 
     cur.close()
     db.close()
