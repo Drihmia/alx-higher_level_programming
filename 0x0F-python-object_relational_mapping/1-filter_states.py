@@ -24,8 +24,7 @@ if __name__ == "__main__":
 
     info = cur.fetchall()
     for row in info:
-        if len(row) == 2:
-            print("({}, \'{}\')".format(row[0], row[1]))
+        print(row)
 
     cur.close()
     db.close()
