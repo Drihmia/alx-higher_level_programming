@@ -19,7 +19,7 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     t_query = """SELECT * FROM {0}
-    WHERE name = '{1}'
+    WHERE BINARY name = '{1}'
     ORDER BY BINARY id ASC""".format("states", argv[4])
     cur.execute(t_query)
 
