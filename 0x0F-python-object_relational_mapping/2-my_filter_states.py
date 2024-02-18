@@ -18,10 +18,9 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    t_query = "SELECT * FROM {0}\
-            WHERE {0}.name = '{1}'\
-            ORDER BY BINARY {0}.id ASC\
-            ".format("states", argv[4])
+    t_query = """SELECT * FROM {0}
+    WHERE {0}.name = '{1}'
+    ORDER BY BINARY {0}.id ASC""".format("states", argv[4])
     cur.execute(t_query)
 
     info = cur.fetchall()
