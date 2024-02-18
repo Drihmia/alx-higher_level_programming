@@ -17,8 +17,8 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     t_query = "SELECT * FROM {0}\
-            WHERE {0}.name LIKE 'N%'\
-            ORDER BY {0}.id ASC\
+            WHERE {0}.name LIKE BINARY 'N%'\
+            ORDER BY BINARY {0}.id ASC\
             ".format("states")
 
     cur.execute(t_query)
