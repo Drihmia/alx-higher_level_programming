@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 """
-a Python script that takes your GitHub credentials (username and
-password) and uses the GitHub API to display your id
+list 10 commits (from the most recent to oldest) of the repository “rails”
+by the user  “rails”
+You must use the GitHub API, here is the documentation
+https://developer.github.com/v3/repos/commits/
+Format: `<sha>: <author name>`
 """
 import sys
 from requests import get
-from requests.auth import HTTPBasicAuth
 
 
 if __name__ == "__main__":
