@@ -13,23 +13,10 @@ if __name__ == "__main__":
     password = sys.argv[2]
 
     url = 'https://api.github.com/{}'.format("user")
-    headers = {
-            "Authorization": f"Bearer {password}",
-            "Accept": "application/vnd.github.v3+json",
-            "X-GitHub-Api-Version": "2022-11-28"
-            }
-    response = requests.get(url, auth=HTTPBasicAuth(username, password),
-                            headers=headers)
+    response = requests.get(url, auth=HTTPBasicAuth(username, password))
     try:
-        # print("++++", response.request.headers)
         if response.status_code == 200:
-            # for i, j in response.headers.items():
-            # if i == "Vary":
-            # for h in response.headers[i].split(","):
-            # print(h)
-            # print("- ", i, "   ", j)
             user_data = response.json()
-            # print(user_data)
             user_id = user_data['id']
             print(user_id)
         else:
