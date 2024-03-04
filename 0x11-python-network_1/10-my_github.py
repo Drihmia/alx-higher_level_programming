@@ -5,6 +5,7 @@ password) and uses the GitHub API to display your id
 """
 import sys
 import requests
+from requests.auth import HTTPBasicAuth
 
 
 if __name__ == "__main__":
@@ -17,7 +18,8 @@ if __name__ == "__main__":
             "Accept": "application/vnd.github.v3+json",
             "X-GitHub-Api-Version": "2022-11-28"
             }
-    response = requests.get(url, auth=(username, password), headers=headers)
+    response = requests.get(url, auth=HTTPBasicAuth(username, password),
+                            headers=headers)
     try:
         # print("++++", response.request.headers)
         if response.status_code == 200:
