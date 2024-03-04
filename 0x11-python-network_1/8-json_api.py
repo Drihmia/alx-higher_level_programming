@@ -23,7 +23,7 @@ if __name__ == "__main__":
     else:
         q = argv[1]
 
-    url = 'http://0.0.0.0:8080/search_user'
+    url = 'http://0.0.0.0:5000/search_user'
     values = {"q": q}
     response = post(url, data=values)
     try:
