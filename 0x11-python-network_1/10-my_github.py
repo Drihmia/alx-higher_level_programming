@@ -15,13 +15,10 @@ if __name__ == "__main__":
     url = 'https://api.github.com/{}'.format("user")
     response = requests.get(url, auth=HTTPBasicAuth(username, password))
     try:
-        if response.status_code == 200:
-            user_data = response.json()
-            user_id = user_data['id']
-            print(user_id)
-        else:
-            print("None")
-    except Exception as f:
+        user_data = response.json()
+        user_id = user_data.get('id', None)
+        print(user_id)
+    except KeyError as f:
         print("None")
 
     # 2nd method using the json method
