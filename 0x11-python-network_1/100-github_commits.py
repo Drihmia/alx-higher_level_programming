@@ -11,21 +11,25 @@ from requests.auth import HTTPBasicAuth
 if __name__ == "__main__":
     repo_name = sys.argv[1]
     owner_name = sys.argv[2]
+
     headers = {
             "Accept": "application/vnd.github+json"
             }
+
     params = {
             "page": 1,
             "per_page": 10
             }
+
     url = "https://api.github.com/repos/{}/{}/commits".format(owner_name,
                                                               repo_name)
     response = get(url, params=params, headers=headers)
     try:
-        user_datas = response.json()
-        for user_data in user_datas:
-            sha = user_data.get("sha")
-            author_name = user_data.get("commit").get("author").get("name")
-            print(sha + ":", author_name)
-    except KeyError as f:
+        commits = response.json()
+        for commit in commits:
+            sha = commit.get("sha")
+            n = "name"
+            author_name = commit.get("commit", {}).get("author", {}).get(n)
+            print("{}: {}".format(sha, author_name))
+    except (KeyError, AttributeError) as f:
         print("None")
