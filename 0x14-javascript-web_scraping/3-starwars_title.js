@@ -10,7 +10,7 @@ req(url, (err, response, body) => {
   if (err) {
     console.log(err);
   } else {
-    if (response.statusCode === '200') {
+    if (response.statusCode === 200) {
       console.log(JSON.parse(body).title);
     }
   }

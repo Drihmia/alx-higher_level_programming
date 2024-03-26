@@ -6,24 +6,20 @@ const req = require('request');
 
 const url = process.argv[2];
 
-req(url, (err, response, body) => {
+req(url, async (err, response, body) => {
   if (err) {
     console.log(err);
-  }
-  try {
-    const charName = JSON.parse(body).results[0].characters;
+  } else {
+    const charName = await JSON.parse(body).results[0].characters;
     const charLink = charName.find(string => string.includes('18'));
-    req(charLink, (err, response, body) => {
-      if (err) {
-        console.log(err);
-      }
-      try {
-        console.log(JSON.parse(body).films.length);
-      } catch (parseError) {
-        console.error(parseError);
-      }
-    });
-  } catch (parseError) {
-    console.error(parseError);
+    if (response.statusCode === 200) {
+      req(charLink, (err, response, body) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(JSON.parse(body).films.length);
+        }
+      });
+    }
   }
 });
