@@ -10,8 +10,17 @@ req(url, async (err, response, body) => {
   if (err) {
     console.log(err);
   } else {
-    const charName = await JSON.parse(body).results[0].characters;
-    const charLink = charName.find(string => string.includes('18'));
+    const results = await JSON.parse(body).results;
+    // console.log(results);
+
+    let charLink;
+    results.some(episode => {
+      charLink = episode.characters.find(string => string.includes('18'));
+      if (charLink) {
+        return charLink;
+      }
+      return false;
+    });
     if (response.statusCode === 200) {
       req(charLink, (err, response, body) => {
         if (err) {
