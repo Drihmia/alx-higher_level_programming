@@ -13,7 +13,7 @@ req(url, async (err, response, body) => {
     const results = await JSON.parse(body).results;
     // console.log(results);
 
-    let charLink;
+    let charLink = 0;
     results.some(episode => {
       charLink = episode.characters.find(string => string.includes('18'));
       if (charLink) {
@@ -21,12 +21,14 @@ req(url, async (err, response, body) => {
       }
       return false;
     });
-    if (response.statusCode === 200) {
+    if (charLink && response.statusCode === 200) {
       req(charLink, (err, response, body) => {
         if (err) {
           console.log(err);
         } else {
-          console.log(JSON.parse(body).films.length);
+          if (response.statusCode === 200) {
+            console.log(JSON.parse(body).films.length);
+          }
         }
       });
     }
