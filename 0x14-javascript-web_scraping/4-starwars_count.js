@@ -10,6 +10,9 @@ req(url, async (err, response, body) => {
   if (err) {
     console.log(err);
   } else {
+    if (response.statusCode !== 200) {
+      process.exit(1);
+    }
     const results = await JSON.parse(body).results;
     // console.log(results);
 
