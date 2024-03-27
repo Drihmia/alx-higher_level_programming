@@ -6,34 +6,27 @@ const req = require('request');
 
 const url = process.argv[2];
 
-req(url, async (err, response, body) => {
+req(url, (err, response, body) => {
   if (err) {
     console.log(err);
   } else {
     if (response.statusCode !== 200) {
       process.exit(1);
     }
-    const results = await JSON.parse(body).results;
+    const results = JSON.parse(body).results;
     // console.log(results);
 
-    let charLink = 0;
-    results.some(episode => {
-      charLink = episode.characters.find(string => string.includes('18'));
-      if (charLink) {
-        return charLink;
-      }
-      return false;
-    });
-    if (charLink && response.statusCode === 200) {
-      req(charLink, (err, response, body) => {
-        if (err) {
-          console.log(err);
-        } else {
-          if (response.statusCode === 200) {
-            console.log(JSON.parse(body).films.length);
-          }
+    let counter = 0;
+
+    results.forEach(episode => {
+      const charPerEpisode = episode.characters;
+
+      charPerEpisode.forEach(link => {
+        if (link.includes('18')) {
+          counter++;
         }
       });
-    }
+    });
+    console.log(counter);
   }
 });
