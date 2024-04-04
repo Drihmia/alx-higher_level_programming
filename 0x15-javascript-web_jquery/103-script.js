@@ -9,4 +9,14 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+  $('INPUT#language_code').on('keydown', function (event) {
+    if (event.keyCode === 13) {
+      const value = $('INPUT#language_code').val();
+      $.get(url + value, function (data, status) {
+        if (status === 'success') {
+          $('DIV#hello').text(data.hello);
+        }
+      });
+    }
+  });
 });
